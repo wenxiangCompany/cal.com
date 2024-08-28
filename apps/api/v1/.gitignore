@@ -1,5 +1,5 @@
 # .env file
-.env
+# .env
 
 # dependencies
 node_modules
@@ -78,4 +78,3 @@ yarn-error.log
 .next
 .husky
 .vscode
-.env
