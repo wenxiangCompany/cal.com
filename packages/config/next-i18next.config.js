@@ -3,7 +3,7 @@ const path = require("path");
 /** @type {import("next-i18next").UserConfig} */
 const config = {
   i18n: {
-    defaultLocale: "en",
+    defaultLocale: "zh-CN",
     locales: [
       "ar",
       "cs",
@@ -37,8 +37,8 @@ const config = {
     ],
   },
   fallbackLng: {
-    default: ["en"],
-    zh: ["zh-CN"],
+    default: ["zh-CN"],
+    en: ["en"],
   },
   reloadOnPrerender: process.env.NODE_ENV !== "production",
 };

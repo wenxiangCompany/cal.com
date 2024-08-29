@@ -1,7 +1,7 @@
 require("dotenv").config({ path: "../../.env" });
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const os = require("os");
-const englishTranslation = require("./public/static/locales/en/common.json");
+const zhCNTranslation = require("./public/static/locales/zh-CN/common.json");
 const { withAxiom } = require("next-axiom");
 const { withSentryConfig } = require("@sentry/nextjs");
 const { version } = require("./package.json");
@@ -91,8 +91,8 @@ if (process.env.GOOGLE_API_CREDENTIALS && !validJson(process.env.GOOGLE_API_CRED
 const informAboutDuplicateTranslations = () => {
   const valueMap = {};
 
-  for (const key in englishTranslation) {
-    const value = englishTranslation[key];
+  for (const key in zhCNTranslation) {
+    const value = zhCNTranslation[key];
 
     if (valueMap[value]) {
       console.warn(
@@ -173,6 +173,7 @@ const matcherConfigUserTypeEmbedRoute = {
 /** @type {import("next").NextConfig} */
 const nextConfig = {
   output: process.env.BUILD_STANDALONE === "true" ? "standalone" : undefined,
+  distDir: "build",
   experimental: {
     // externalize server-side node_modules with size > 1mb, to improve dev mode performance/RAM usage
     serverComponentsExternalPackages: ["next-i18next"],
